@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  capacity-connect:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: capacity_connect_prototype
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_DATA_SOURCE=mock
+      - VITE_ENABLE_LATENCY=true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:80/"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
