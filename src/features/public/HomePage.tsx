@@ -66,7 +66,6 @@ export const HomePage: React.FC = () => {
               Capacity<span className="text-teal-600 dark:text-teal-400">Connect</span>
             </span>
             <span className="hidden sm:block text-[10px] text-slate-400 font-medium tracking-wider uppercase -mt-0.5">
-              IMD Training Prototype
             </span>
           </div>
         </Link>
